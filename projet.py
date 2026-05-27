@@ -2,7 +2,7 @@
 
 """ On importe des modules nécessaires (sys pour la gestion des arguments, math pour les calculs de distance). """ 
 import sys
-import math
+import math 
 
 # ==========================================
 # CONFIGURATION DES SITES DE LIAISON ET CRITÈRES DES LIAISONS HYDROGÈNE (A, U, G, C). 
