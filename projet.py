@@ -127,10 +127,10 @@ class RNA_molecule:
         sorted_ids = sorted(self.nucleotides.keys()) # On trie les identifiants numériques des nucléotides pour garantir un ordre cohérent lors de la comparaison des paires.
         
         """Double boucle pour comparer chaque paire de nucléotides uniques (i < j)."""
-        for i in range(len(sorted_ids)): # On parcourt les indices des nucléotides triés, en commençant par le premier (i) et en comparant avec tous les suivants (j > i) pour éviter les comparaisons redondantes et les auto-appariements.
+        for i in range(len(sorted_ids)): # On parcourt les indices des nucléotides triés, en commençant par le premier (i) et en comparant avec tous les suivants (j > i) pour éviter les comparaisons.
             for j in range(i + 1, len(sorted_ids)):
                 id1, id2 = sorted_ids[i], sorted_ids[j] # On récupère les identifiants numériques des deux nucléotides à comparer.
-                nuc1, nuc2 = self.nucleotides[id1], self.nucleotides[id2]
+                nuc1, nuc2 = self.nucleotides[id1], self.nucleotides[id2] # On récupère les objets Nucleotide correspondants à ces identifiants pour accéder à leurs types et à leurs atomes.
                 
                 """On Vérifie si le couple est autorisé (CG, AU, GU)"""
                 pair_type = (nuc1.type, nuc2.type)
